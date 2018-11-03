@@ -1,0 +1,6 @@
+.subuh, .terbit, .duhur, .ashar, .maghrib, .isya {
+    width: 300px;
+    display: block;
+    position: absolute;
+    opacity: 0;
+}

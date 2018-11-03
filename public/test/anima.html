@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anima</title>
+	<link rel="stylesheet" type="text/css" href="../css/main.css" />
+	<script type="text/javascript" src="../engine/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<div class="animate" style="overflow: hidden;">
+		<!-- <img class="subuh" src="../package/subuh.png" style="width: 300px; display: block; position: absolute;" /> -->
+		<!-- <img class="duhur" src="../package/duhur.png" style="width: 300px; display: block; position: absolute;" /> -->
+		<!-- <img class="ashar" src="../package/ashar.png" style="width: 300px; display: block; position: absolute;" /> -->
+		<img class="maghrib" src="../package/maghrib.png" style="width: 300px; display: block; position: absolute;" />
+        <img class="isya" src="../package/isya.png" style="width: 300px; display: block; position: absolute;" />
+	</div>
+	<div class="time">
+		<span class="hour">00</span>:<span class="minute">00</span>:<span class="second">00</span>
+	</div>
+    <script type="text/javascript">
+		$().ready(function() {
+			// Abaikan script ini sampe komen selanjutnya
+			var d = new Date();
+			var hour = d.getHours();
+			var minute = d.getMinutes();
+			var second = d.getSeconds();
+			$('.hour').html(hour);
+			$('.minute').html(minute);
+			$('.second').html(second);
+			var hour = 18;
+			var minute = 0;
+			var second = 0;
+
+			var t = setInterval(function() {
+				second = second + 1;
+
+				if (second == 60) {
+					minute = minute + 1;
+					second = 0;
+				}
+				if (minute == 60) {
+					hour = hour + 1;
+					minute = 0;
+				}
+				if (hour == 24) {
+					hour = 0;
+				}
+
+				if (second < 10) {
+					$('.second').html("0" + second);
+				} else {
+					$('.second').html(second);
+				}
+				if (minute < 10) {
+					$('.minute').html("0" + minute);
+				} else {
+					$('.minute').html(minute);
+				}
+				if (hour < 10) {
+					$('.hour').html("0" + hour);
+				} else {
+					$('.hour').html(hour);
+				}
+
+				// Test animasi Maghrib ke Isya
+				// Jika jam berada diantara Maghrib dan Isya
+				if (hour <= 18 && hour <= 19) {
+					// Menghitung jangka waktu antara dua waktu
+					jangka = 19 - 18;
+					// Mengkali jangka waktu dikali 60 (Jadi hitungan menit)
+					jangka = jangka * 60;
+
+					// Mengubah jangka waktu menjadi persentase, jadi 100 / 60
+					persentase = 100 / jangka;
+					// Mengubah persentase setiap 1 milidetik (Liat angka 1 di paling bawah setelah fungsi set interval)
+					persentase = minute * persentase;
+
+					// Mengubah animasi menjadi opacity
+					opactiy_maghrib = (100 - persentase) / 100;
+					opacity_isya = persentase / 100;
+
+					// Setiap 1 milidetik, mengubah opacity setiap gambar
+					$('.maghrib').css({opacity: opactiy_maghrib})
+					$('.isya').css({opacity: opacity_isya})
+				}
+			}, 1);
+		})
+	</script>
+</body>
+</html>
