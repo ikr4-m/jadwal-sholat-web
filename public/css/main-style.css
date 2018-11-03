@@ -1,6 +1,63 @@
+html {
+	color: rgba(0, 0, 0, 0.87);
+}
+body {
+	margin: 0;
+	font-family: sans-serif;
+	background-color: #EEE;
+}
 .subuh, .terbit, .duhur, .ashar, .maghrib, .isya {
     width: 300px;
     display: block;
     position: absolute;
     opacity: 0;
+}
+
+.header {
+	background-color: white;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid #CCC;
+	font-size: 1.25rem;
+	font-weight: lighter;
+}
+.jam {
+	padding: 1rem;
+	float: left;
+}
+.tanggal {
+	padding: 1rem;
+	float: right;
+}
+.overflow {
+	width: 100%;
+}
+.overflow .fulltime {
+	width: 10rem;
+	top: 2rem;
+	left: calc(50% - 10rem);
+	background-color: white;
+	width: fit-content;
+	padding: 1rem;
+	border: 1px solid #CCC;
+	font-size: 5rem;
+	position: absolute;
+}
+.animate {
+	position: relative;
+	width: 275px;
+	margin: 10rem auto 0 auto;
+}
+.footer {
+	width: 100%;
+	clear: both;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 0;
+	border-top: 1px solid #CCC;
+	background-color: white;
+	padding: 4rem;
+	border-radius: 50% 50% 0 0;
+	text-align: center;
 }
