@@ -3,7 +3,7 @@ Sebelum melangkah lebih lanjut, ada baiknya saya berterima kasih kepada:
 1. Allah SWT. Tanpa ijin-Nya, proyek ini tidak akan berjalan dengan semestinya.
 2. Pak Andy ([SMKS Mutiara Ilmu](http://mutiarailmu.sch.id/)) yang memberikan amanah kepada saya untuk membuat aplikasi ini pada mata pelajaran Pemodelan Perangkat Lunak di semester 3.
 3. [Pak Yasir](https://web.facebook.com/yasirsensei) ([SMKS Mutiara Ilmu](http://mutiarailmu.sch.id/)) yang memberikan bayangan dan logika kedepan untuk urusan animasi.
-4. [Aghits Nidallah](https://web.facebook.com/aghits.nidallah) ([github/NikarashiHatsu](https://github.com/NikarashiHatsu)), terima kasih untuk template design sekaligus *teman curhat dikala [suicidal](https://en.wikipedia.org/wiki/Suicide_crisis) menghadang, mungkin gua bakal mati kalau gaada elu*.
+4. [Aghits Nidallah](https://web.facebook.com/aghits.nidallah) ([github/NikarashiHatsu](https://github.com/NikarashiHatsu) **contrib**), terima kasih untuk template design sekaligus *teman curhat dikala [suicidal](https://en.wikipedia.org/wiki/Suicide_crisis) menghadang, mungkin gua bakal mati kalau gaada elu*.
 5. [Raden Galih Prastian](https://web.facebook.com/prazeblaze) ([github/prazeblaze](https://github.com/prazeblaze)) yang mengingatkan kembali cara memakai package yang dulu saya pakai sewaktu saya dan dia membangun bot discord.
 6. Mohammad Vrio ([fb/Sainsologi](https://web.facebook.com/Sainsologi/)), thanks untuk nyemangatin hidup gua dengan hiburanmu.
 7. Teman-teman dari Discord-Bots-Indonesia, tanpa kalian gua gabisa menggunakan Node.JS.
