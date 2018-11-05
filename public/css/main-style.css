@@ -1,3 +1,14 @@
+/* Inisialisasi font */
+@font-face {
+	font-family: 'Bebas Neue Regular';
+	src: url('../font/BebasNeue-Regular.ttf');
+}
+@font-face {
+	font-family: 'PT Sans Regular';
+	src: url('../font/PT_Sans-Web-Regular.ttf');
+}
+
+/* Bagian belakang */
 html {
 	color: rgba(0, 0, 0, 0.87);
 }
@@ -6,50 +17,95 @@ body {
 	font-family: sans-serif;
 	background-color: #EEE;
 }
+
+/* Layering Time */
+.header 		{z-index: 2;}
+.running-text 	{z-index: 1;}
+.fulltime 		{z-index: 3;}
+.animate 		{z-index: 2;}
+.footer 		{z-index: 3;}
+
+/* Bagian kepala */
+.header {
+	background-color: #ffffff;
+	height: 71px;
+	box-shadow: 5px 3px 25px;
+	font-size: 22pt;
+	z-index: 0;
+	overflow: hidden;
+	width: 100%;
+}
+.jam {
+	font-family: 'PT Sans Regular';
+	padding: 1rem 1rem 1rem 1rem;
+	float: left;
+}
+.tanggal {
+	font-family: 'PT Sans Regular';
+	padding: 1rem;
+	float: right;
+}
+
+/* Running Text */
+.running-text {
+	font-family: 'PT Sans Regular';
+	font-size: 15pt;
+	z-index: -1;
+	position: relative;
+	background-color: #ffffff;
+	height: 45px;
+}
+.running-text div {
+	padding: 12px 1rem 1rem 1rem;
+	float: left;
+}
+
+/* Jam digital */
+.fulltime {
+	font-family: 'Bebas Neue Regular';
+	
+	width: 10rem;
+	top: 1rem;
+	left: calc(50% - 12rem - 7px);
+	background-color: white;
+	width: fit-content;
+	padding: 1rem;
+	border: 1px solid #CCC;
+	font-size: 7rem;
+	position: absolute;
+
+	box-shadow: 0px 1px 25px grey;
+}
+.fulltime div {
+	text-align: center;
+	float: left;
+}
+.hour, .minute, .second {
+	width: 100px;
+	display: block;
+	text-align: center;
+}
+
+/* Gambar masjid */
+.animate {
+	position: absolute;
+	width: 275px;
+	bottom: calc(65% + 2.8px);
+	left: calc(47% - 13rem - 7px);
+}
+/* Urusan JS, tidak bisa diganggu gugat */
 .subuh, .terbit, .duhur, .ashar, .maghrib, .isya {
-    width: 300px;
+    width: 500px;
     display: block;
     position: absolute;
     opacity: 0;
 }
 
-.header {
-	background-color: white;
-	overflow: hidden;
-	padding: 0;
-	margin: 0;
-	border-bottom: 1px solid #CCC;
-	font-size: 1.25rem;
-	font-weight: lighter;
-}
-.jam {
-	padding: 1rem;
-	float: left;
-}
-.tanggal {
-	padding: 1rem;
-	float: right;
-}
-.overflow {
-	width: 100%;
-}
-.overflow .fulltime {
-	width: 10rem;
-	top: 2rem;
-	left: calc(50% - 10rem);
-	background-color: white;
-	width: fit-content;
-	padding: 1rem;
-	border: 1px solid #CCC;
-	font-size: 5rem;
-	position: absolute;
-}
-.animate {
-	position: relative;
-	width: 275px;
-	margin: 10rem auto 0 auto;
-}
+/* Hadist */
 .footer {
+	height: 151px;
+	font-family: 'PT Sans Regular';
+	font-size: 15pt;
 	width: 100%;
 	clear: both;
 	box-sizing: border-box;

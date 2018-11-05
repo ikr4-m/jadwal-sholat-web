@@ -32,7 +32,7 @@ $().ready(function () {
 
         // date to integer
         var clock = (hour * 60) + minute;
-        $('.min-clock').html(clock);
+        //$('.min-clock').html(clock);
 
         /**
          * Penjelasan ini mungkin agak ribet sedikit:

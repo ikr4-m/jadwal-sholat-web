@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>Jadwal Sholat</title>
     <link rel="stylesheet" href="./css/main-style.css">
@@ -6,27 +7,47 @@
     <script src="./engine/jquery-3.3.1.min.js"></script>
     <script src="./engine/bundle.js"></script>
 </head>
+
 <body>
     <!-- Adhan Paramaters -->
     <script src="./js/adhan-settings.js"></script>
     <!-- Clocking System -->
     <script src="./js/clocking.js"></script>
+    <!-- Marquee Text -->
+    <script src="./js/marquee-property.js"></script>
     <!-- Random Hadist -->
     <!--<script src="./js/rand-hadist.js"></script>-->
 
     <!-- BEGIN TEMPLATE -->
     <div class="header">
         <div class="jam">
-            <span class="waktu"></span>
+            <span class="waktu">Loading...</span>
         </div>
         <div class="tanggal">
             <span class="date"></span>
         </div>
     </div>
-    <div class="overflow">
-        <div class="fulltime">
-            <span class="hour"></span>:<span class="minute"></span>:<span class="second"></span><!--  | <span class="min-clock"></span><br> -->
-        </div>
+    <div class="running-text">
+        <marquee behavior="scroll" direction="right">
+            <div class="subuh-text">Subuh</div>
+            <div class="separator">|</div>
+            <div class="terbit-text">Terbit</div>
+            <div class="separator">|</div>
+            <div class="duhur-text">Duhur</div>
+            <div class="separator">|</div>
+            <div class="ashar-text">Ashar</div>
+            <div class="separator">|</div>
+            <div class="maghrib-text">Maghrib</div>
+            <div class="separator">|</div>
+            <div class="isya-text">Isya</div>
+        </marquee>
+    </div>
+    <div class="fulltime">
+        <div class="hour">00</div>
+        <div class="fulltime-titik">:</div>
+        <div class="minute">00</div>
+        <div class="fulltime-titik">:</div>
+        <div class="second">00</div>
     </div>
     <div class="animate">
         <img src="./package/subuh.png" alt="subuh" class="subuh">
@@ -40,4 +61,5 @@
         Random Hadist
     </footer>
 </body>
+
 </html>
