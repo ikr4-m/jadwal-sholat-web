@@ -19,11 +19,17 @@ body {
 }
 
 /* Layering Time */
-.header 		{z-index: 2;}
-.running-text 	{z-index: 1;}
+.header 		{z-index: 1;}
+.running-text 	{z-index: -1;}
 .fulltime 		{z-index: 3;}
-.animate 		{z-index: 2;}
-.footer 		{z-index: 3;}
+.animate		{z-index: 3;}
+.footer			{z-index: 3;}
+
+/* Background */
+.background {
+	background-color: red;
+	width: 100%;
+}
 
 /* Bagian kepala */
 .header {
@@ -31,7 +37,6 @@ body {
 	height: 71px;
 	box-shadow: 5px 3px 25px;
 	font-size: 22pt;
-	z-index: 0;
 	overflow: hidden;
 	width: 100%;
 }
@@ -49,8 +54,8 @@ body {
 /* Running Text */
 .running-text {
 	font-family: 'PT Sans Regular';
+	display: block;
 	font-size: 15pt;
-	z-index: -1;
 	position: relative;
 	background-color: #ffffff;
 	height: 45px;
