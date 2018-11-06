@@ -47,7 +47,10 @@ $().ready(function () {
         function turnOpacity(hasil, maximum) {
             return (hasil / maximum) * 100;
         }
-        if (clock < subuh) display = "Tengah Malam"
+        if (clock < subuh) {
+            display = "Tengah Malam";
+            $('.subuh').css({ opacity: 1});
+        }
         else if (clock >= subuh && clock < terbit) {
             display = "Subuh";
             maximum = terbit - subuh;
