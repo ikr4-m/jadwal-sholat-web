@@ -14,18 +14,18 @@ const express = require('express');
 const app = express();
 
 // beberapa konstant yang biasa dipanggil-panggil, makanya ditaruh dimari
-const {router, site} = require('./main/constant');
+const { router, site } = require('./main/constant');
 const logger = require("." + router + "logger");
 
 // atur enginenya semaksimal mungkin, dapat dikopas
 app.use(express.static(__dirname + site));
-app.set('views',__dirname + '/main');
+app.set('views', __dirname + '/main');
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs')
 
 // trycatch untuk router dan listener
-try{
+try {
     // daripada pake command.run, sama aja sih, kan panggil function doang
     // biar kece, beri sedikit "animasi"
     require("." + router + "router")(app, site, router, logger)
@@ -36,5 +36,10 @@ catch (err) {
     console.log(logger("ERROR") + `${err.message}\n${err}`);
 }
 finally {
-    setTimeout(function(){console.log(logger("Ready") + "Open https://localhost:3030/ now!");},1000)
+    setTimeout(() => {
+        console.log(logger("Preparing") + "Calling chrome to open http://localhost:3030/ for you.");
+    }, 1000);
+    setTimeout(() => {
+        require("." + router + "call-chrome")(logger);
+    }, 2500);
 }

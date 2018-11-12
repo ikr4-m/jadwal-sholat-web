@@ -20,6 +20,7 @@ body {
 
 /* Layering Time */
 .header 		{z-index: 1;}
+.background		{z-index: -1;}
 .running-text 	{z-index: -1;}
 .fulltime 		{z-index: 3;}
 .animate		{z-index: 3;}

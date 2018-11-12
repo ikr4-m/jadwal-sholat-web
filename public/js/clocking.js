@@ -12,10 +12,10 @@ $().ready(function () {
         bulan = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus",
             "September", "Oktober", "November", "Desember");
     $('.date').html(`${hari[day]}, ${date} ${bulan[month]} ${year}`);
-    hour = 0; minute = 0; second = 0; // debugging purposes
+    //hour = 0; minute = 0; second = 0; // debugging purposes
 
     // realtime clocking system
-    var integral = 1;
+    var integral = 1000;
     setInterval(() => {
         // Menganimasikan detik seperti pada umumnya
         second++;
