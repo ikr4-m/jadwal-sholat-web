@@ -1,4 +1,4 @@
-module.exports = function(app, site, router, logger) {
+module.exports = (app, site, router, logger) => {
     try {
         app.get('/', function(req, res){
             res.render(".." + site + 'index.html')
