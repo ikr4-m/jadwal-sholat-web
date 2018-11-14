@@ -70,11 +70,9 @@ body {
 .fulltime {
 	font-family: 'Bebas Neue Regular';
 	
-	width: 10rem;
 	top: 1rem;
 	left: calc(50% - 12rem - 7px);
 	background-color: white;
-	width: fit-content;
 	padding: 1rem;
 	border: 1px solid #CCC;
 	font-size: 7rem;
@@ -96,7 +94,7 @@ body {
 .animate, .animate img {
 	position: fixed;
 	width: 500px;
-	bottom: 145;
+	bottom: 145px;
 	left: calc(47% - 13rem - 7px);
 	display: block;
 }
