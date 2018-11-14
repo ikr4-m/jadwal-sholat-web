@@ -93,33 +93,33 @@ body {
 }
 
 /* Gambar masjid */
-.animate {
-	position: absolute;
-	width: 275px;
-	bottom: calc(65% + 2.8px);
+.animate, .animate img {
+	position: fixed;
+	width: 500px;
+	bottom: 145;
 	left: calc(47% - 13rem - 7px);
+	display: block;
 }
 /* Urusan JS, tidak bisa diganggu gugat */
 .subuh, .terbit, .duhur, .ashar, .maghrib, .isya {
-    width: 500px;
-    display: block;
-    position: absolute;
     opacity: 0;
 }
 
 /* Hadist */
 .footer {
-	height: 151px;
-	font-family: 'PT Sans Regular';
-	font-size: 15pt;
-	width: 100%;
-	clear: both;
-	box-sizing: border-box;
-	position: absolute;
-	bottom: 0;
-	border-top: 1px solid #CCC;
-	background-color: white;
-	padding: 4rem;
-	border-radius: 50% 50% 0 0;
+    height: 151px;
+    font-family: 'PT Sans Regular';
+    font-size: 15pt;
+    width: 100%;
+    clear: both;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #CCC;
+    background-color: white;
+    padding: 2.4rem 2rem 2.1rem 2rem;
+    border-radius: 20% 20% 0 0;
 	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }

@@ -8,7 +8,7 @@ $().ready(function () {
         date = d.getDate(),
         month = d.getMonth(),
         year = d.getFullYear(),
-        hari = new Array("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"),
+        hari = new Array("Ahad", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"),
         bulan = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus",
             "September", "Oktober", "November", "Desember");
     $('.date').html(`${hari[day]}, ${date} ${bulan[month]} ${year}`);

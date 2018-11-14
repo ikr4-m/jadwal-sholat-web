@@ -1,12 +1,12 @@
 {
   "name": "jadwal-sholat-web",
-  "version": "1.0.0",
+  "version": "1.5.3",
   "description": "Jadwal Sholat",
   "main": "index.js",
   "scripts": {
     "test": "node server"
   },
-  "author": "Ikramullah",
+  "author": "github/skymunn",
   "license": "GNU AGPL v.3",
   "dependencies": {
     "adhan": "^3.0.0",
