@@ -13,8 +13,10 @@
 const cal = new Date();
 const pack = require('./package.json');
 const logger = require('./main/logger');
+const memoryUsage = (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2);
+
 let header1 = ` ${pack.description} (${pack.name}) v${pack.version} ${pack.license}`;
-let header2 = ` Run in ${process.arch} arch. (C) 2018-${cal.getFullYear()} ${pack.author}`;
+let header2 = ` Run in ${process.arch} arch with ${memoryUsage} MB memory usage. (C) 2018-${cal.getFullYear()} ${pack.author}`;
 function kotaque(h1, h2) {
     let justice = (h1.length > h2.length || h1.length == h2.length) ? h1.length : h2.length;
     let ret = new Array();

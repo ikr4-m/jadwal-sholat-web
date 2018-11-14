@@ -2,7 +2,7 @@
   "name": "jadwal-sholat-web",
   "version": "1.5.3",
   "description": "Jadwal Sholat",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "node server"
   },
