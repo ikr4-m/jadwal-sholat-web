@@ -19,12 +19,12 @@ $().ready(function () {
     setInterval(() => {
         // Menganimasikan detik seperti pada umumnya
         second++;
-        if (second == 60) { second = 0; minute++ }
-        if (minute == 60) { minute = 0; hour++ }
-        if (hour == 24) { hour = 0; minute = 0; second = 0; location.reload() }
+        if (second === 60) { second = 0; minute++; }
+        if (minute === 60) { minute = 0; hour++; }
+        if (hour === 24) { hour = 0; minute = 0; second = 0; location.reload(); }
         // 2 >> 02 || 10 >> 10
         function pad(angka) {
-            return (angka.toString().length == 1) ? "0" + angka : angka
+            return (angka.toString().length === 1) ? "0" + angka : angka;
         }
         $('.hour').html(pad(hour));
         $('.minute').html(pad(minute));
@@ -49,7 +49,7 @@ $().ready(function () {
         }
         if (clock < subuh) {
             display = "Tengah Malam";
-            $('.subuh').css({ opacity: 1});
+            $('.subuh').css({ opacity: 1 });
         }
         else if (clock >= subuh && clock < terbit) {
             display = "Subuh";
@@ -95,7 +95,7 @@ $().ready(function () {
             $('.maghrib').css({ opacity: 0 });
             $('.isya').css({ opacity: 1 });
         }
-        else display = "null"
-        $('.waktu').html(display)
-    }, integral)
-})
+        else display = "null";
+        $('.waktu').html(display);
+    }, integral);
+});

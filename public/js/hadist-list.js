@@ -6,4 +6,4 @@ var hadist_list = new Array(
     "Rasulullah Shallallahu 'alaihi wa Sallam bersabda: Iman itu ada tujuh puluh cabang lebih. Dan malu adalah salah satu cabang iman [HR. Muslim]",
     "Seseorang bertanya kepada Rasulullah Shallallahu 'alaihi wa Sallam Islam manakah yang paling baik? Rasulullah Shallallahu 'alaihi wa Sallam bersabda: Memberikan makanan, mengucap salam kepada orang yang engkau kenal dan yang tidak engkau kenal [HR. Muslim]",
     "Aku pernah bertanya: Wahai Rasulullah, Islam manakah yang paling utama? Rasulullah Shallallahu 'alaihi wa Sallam bersabda: Orang yang kaum muslimin selamat dari lisan dan tangannya [HR. Muslim]"
-)
+);
