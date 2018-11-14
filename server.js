@@ -18,11 +18,11 @@ const memoryUsage = (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2);
 let header1 = ` ${pack.description} (${pack.name}) v${pack.version} ${pack.license}`;
 let header2 = ` Run in ${process.arch} arch with ${memoryUsage} MB memory usage. (C) 2018-${cal.getFullYear()} ${pack.author}`;
 function kotaque(h1, h2) {
-    let justice = (h1.length > h2.length || h1.length == h2.length) ? h1.length : h2.length;
+    let justice = (h1.length > h2.length || h1.length === h2.length) ? h1.length : h2.length;
     let ret = new Array();
     for (let i = 1; i <= justice; i++) {
-        if (i == 1) ret.push("+");
-        else if (i == justice) ret.push("-+");
+        if (i === 1) ret.push("+");
+        else if (i === justice) ret.push("-+");
         else ret.push("-");
     }
     return ret.join('');
@@ -44,7 +44,7 @@ setTimeout(() => {
     app.set('views', __dirname + '/main');
 
     app.engine('html', require('ejs').renderFile);
-    app.set('view engine', 'ejs')
+    app.set('view engine', 'ejs');
 
     // trycatch untuk router dan listener
     try {
