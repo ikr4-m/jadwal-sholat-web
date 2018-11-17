@@ -4,8 +4,11 @@ $().ready(() => {
     function reloadHadist(array) {
         return Math.floor(Math.random() * array.length);
     }
-    $('.footer').html(hadist[reloadHadist(hadist)].toString());
+    $('.isi-footer').html(hadist[reloadHadist(hadist)].toString());
     setInterval(() => {
-        $('.footer').html(hadist[reloadHadist(hadist)].toString());
+        $('.isi-footer').animate({opacity: 0}, 400, () => {
+            $('.isi-footer').html(hadist[reloadHadist(hadist)].toString());
+            $('.isi-footer').animate({opacity: 1}, 400);
+        });
     }, hadistIntegral);
 });
