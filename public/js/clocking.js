@@ -12,7 +12,7 @@ $().ready(function () {
         bulan = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus",
             "September", "Oktober", "November", "Desember");
     $('.date').html(`${hari[day]}, ${date} ${bulan[month]} ${year}`);
-    //hour = 0; minute = 0; second = 0; // debugging purposes
+    hour = 3; minute = 22; second = 50; // debugging purposes
 
     // realtime clocking system
     var integral = 1000;
@@ -46,6 +46,18 @@ $().ready(function () {
         var display, hasil, maximum;
         function turnOpacity(hasil, maximum) {
             return (hasil / maximum) * 100;
+        }
+        function modalLaunch(menit, waktu) {
+            $('.remind-minute').html(menit.toString());
+            $('.remind-time').html(waktu.toString());
+            $('.modal-bg').css({display: 'block', opacity: 1});
+            setTimeout(() => {
+                $('.modal-isi').animate({top: '-300px'}, 400);
+                $('.modal-bg').animate({opacity: 0}, 400, () => {
+                    $('.modal-bg').css({display: 'none'});
+                    $('.modal-isi').css({top: '0px'});
+                });                
+            }, 3000);
         }
         if (clock < subuh) {
             display = "Tengah Malam";
