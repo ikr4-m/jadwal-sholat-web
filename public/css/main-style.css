@@ -25,6 +25,7 @@ body {
 .fulltime 		{z-index: 3;}
 .animate		{z-index: 3;}
 .footer			{z-index: 3;}
+.modal-remind	{z-index: 4;}
 
 /* Background */
 .background {
@@ -90,13 +91,35 @@ body {
 	text-align: center;
 }
 
+/* Modal */
+.modal-remind {
+    font-family: 'PT Sans Regular';
+    width: 500px;
+    height: 150px;
+    background-color: aqua;
+    position: absolute;
+    margin-top: 17px;
+    margin-left: calc(47% - 13rem - 25px);
+	box-shadow: 0px 5px 25px grey;
+	text-overflow: ellipsis;
+	overflow: hidden;
+
+	opacity: 0;
+}
+.modal-remind-isi {
+    display: block;
+    text-align: center;
+    padding: 25px 0px;
+    font-size: 40px;
+}
+
 /* Gambar masjid */
 .animate, .animate img {
-	position: fixed;
-	width: 500px;
-	bottom: 145px;
-	left: calc(47% - 13rem - 7px);
-	display: block;
+    position: fixed;
+    width: 500px;
+    bottom: 145px;
+    left: calc(47% - 13rem - 25px);
+    display: block;
 }
 /* Urusan JS, tidak bisa diganggu gugat */
 .subuh, .terbit, .duhur, .ashar, .maghrib, .isya {
