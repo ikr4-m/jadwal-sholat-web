@@ -55,7 +55,7 @@ $().ready(function () {
             display = "Subuh";
             maximum = terbit - subuh;
             hasil = terbit - clock;
-            $('.subuh').css({ opacity: (turnOpacity(hasil, maximum) / 100) });
+            $('.subuh').css({ opacity: 1 });
             $('.terbit').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
         }
         else if (clock >= terbit && clock < duhur) {
@@ -63,7 +63,7 @@ $().ready(function () {
             maximum = duhur - terbit;
             hasil = duhur - clock;
             $('.subuh').css({ opacity: 0 });
-            $('.terbit').css({ opacity: (turnOpacity(hasil, maximum) / 100) });
+            $('.terbit').css({ opacity: 1 });
             $('.duhur').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
         }
         else if (clock >= duhur && clock < ashar) {
@@ -71,7 +71,7 @@ $().ready(function () {
             maximum = ashar - duhur;
             hasil = ashar - clock;
             $('.terbit').css({ opacity: 0 });
-            $('.duhur').css({ opacity: (turnOpacity(hasil, maximum) / 100) });
+            $('.duhur').css({ opacity: 1});
             $('.ashar').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
         }
         else if (clock >= ashar && clock < maghrib) {
@@ -79,7 +79,7 @@ $().ready(function () {
             maximum = maghrib - ashar;
             hasil = maghrib - clock;
             $('.duhur').css({ opacity: 0 });
-            $('.ashar').css({ opacity: (turnOpacity(hasil, maximum) / 100) });
+            $('.ashar').css({ opacity: 1 });
             $('.maghrib').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
         }
         else if (clock >= maghrib && clock < isya) {
@@ -87,7 +87,7 @@ $().ready(function () {
             maximum = isya - maghrib;
             hasil = isya - clock;
             $('.ashar').css({ opacity: 0 });
-            $('.maghrib').css({ opacity: (turnOpacity(hasil, maximum) / 100) });
+            $('.maghrib').css({ opacity: 1 });
             $('.isya').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
         }
         else if (clock >= isya && clock < (24 * 60)) {

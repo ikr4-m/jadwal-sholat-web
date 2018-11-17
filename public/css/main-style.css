@@ -118,7 +118,7 @@ body {
     position: fixed;
     width: 500px;
     bottom: 145px;
-    left: calc(47% - 13rem - 25px);
+    left: calc(47% - 13rem - 19px);
     display: block;
 }
 /* Urusan JS, tidak bisa diganggu gugat */
