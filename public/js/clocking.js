@@ -12,7 +12,7 @@ $().ready(function () {
         bulan = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus",
             "September", "Oktober", "November", "Desember");
     $('.date').html(`${hari[day]}, ${date} ${bulan[month]} ${year}`);
-    hour = 3; minute = 22; second = 50; // debugging purposes
+    //hour = 00; minute = 00; second = 00; // debugging purposes
 
     // realtime clocking system
     var integral = 1000;
@@ -31,7 +31,7 @@ $().ready(function () {
         $('.second').html(pad(second));
 
         // date to integer
-        var clock = (hour * 60) + minute;
+        var clock = (hour * 3600) + (minute * 60) + second;
         //$('.min-clock').html(clock);
 
         /**
@@ -48,20 +48,36 @@ $().ready(function () {
             return (hasil / maximum) * 100;
         }
         function modalLaunch(menit, waktu) {
+            let interval = 500;
             $('.remind-minute').html(menit.toString());
             $('.remind-time').html(waktu.toString());
             $('.modal-bg').css({display: 'block', opacity: 1});
             setTimeout(() => {
-                $('.modal-isi').animate({top: '-300px'}, 400);
-                $('.modal-bg').animate({opacity: 0}, 400, () => {
+                $('.modal-isi').animate({top: '-300px'}, interval);
+                $('.modal-bg').animate({opacity: 0}, interval, () => {
                     $('.modal-bg').css({display: 'none'});
                     $('.modal-isi').css({top: '0px'});
                 });                
-            }, 3000);
+            }, 5000);
+        }
+        function modalMasukWaktu(waktu) {
+            let interval = 500;
+            $('.masuk-waktu').html(waktu.toString());
+            $('.modal-switch').css({display: 'block', opacity: 1});
+            setTimeout(() => {
+                $('.modal-isi-switch').animate({top: '-300px'}, interval);
+                $('.modal-switch').animate({opacity: 0}, interval, () => {
+                    $('.modal-switch').css({display: 'none'});
+                    $('.modal-isi-switch').css({top: '0px'});
+                });                
+            }, 5000);
         }
         if (clock < subuh) {
             display = "Tengah Malam";
             $('.subuh').css({ opacity: 1 });
+            if (clock === (subuh - (10 * 60))) modalLaunch(10, "Subuh");
+            else if (clock === (subuh - (20 * 60))) modalLaunch(20, "Subuh");
+            else if (clock === (subuh - (30 * 60))) modalLaunch(30, "Subuh");
         }
         else if (clock >= subuh && clock < terbit) {
             display = "Subuh";
@@ -69,6 +85,10 @@ $().ready(function () {
             hasil = terbit - clock;
             $('.subuh').css({ opacity: 1 });
             $('.terbit').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
+            if (clock === subuh) modalMasukWaktu(display);
+            else if (clock === (terbit - (10 * 60))) modalLaunch(10, "Terbit");
+            else if (clock === (terbit - (20 * 60))) modalLaunch(20, "Terbit");
+            else if (clock === (terbit - (30 * 60))) modalLaunch(30, "Terbit");
         }
         else if (clock >= terbit && clock < duhur) {
             display = "Terbit";
@@ -77,6 +97,10 @@ $().ready(function () {
             $('.subuh').css({ opacity: 0 });
             $('.terbit').css({ opacity: 1 });
             $('.duhur').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
+            if (clock === terbit) modalMasukWaktu(display);
+            else if (clock === (duhur - (10 * 60))) modalLaunch(10, "Duhur");
+            else if (clock === (duhur - (20 * 60))) modalLaunch(20, "Duhur");
+            else if (clock === (duhur - (30 * 60))) modalLaunch(30, "Duhur");
         }
         else if (clock >= duhur && clock < ashar) {
             display = "Duhur";
@@ -85,6 +109,10 @@ $().ready(function () {
             $('.terbit').css({ opacity: 0 });
             $('.duhur').css({ opacity: 1});
             $('.ashar').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
+            if (clock === duhur) modalMasukWaktu(display);
+            else if (clock === (ashar - (10 * 60))) modalLaunch(10, "Ashar");
+            else if (clock === (ashar - (20 * 60))) modalLaunch(20, "Ashar");
+            else if (clock === (ashar - (30 * 60))) modalLaunch(30, "Ashar");
         }
         else if (clock >= ashar && clock < maghrib) {
             display = "Ashar";
@@ -93,6 +121,10 @@ $().ready(function () {
             $('.duhur').css({ opacity: 0 });
             $('.ashar').css({ opacity: 1 });
             $('.maghrib').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
+            if (clock === ashar) modalMasukWaktu(display);
+            else if (clock === (maghrib - (10 * 60))) modalLaunch(10, "Maghrib");
+            else if (clock === (maghrib - (20 * 60))) modalLaunch(20, "Maghrib");
+            else if (clock === (maghrib - (30 * 60))) modalLaunch(30, "Maghrib");
         }
         else if (clock >= maghrib && clock < isya) {
             display = "Maghrib";
@@ -101,11 +133,16 @@ $().ready(function () {
             $('.ashar').css({ opacity: 0 });
             $('.maghrib').css({ opacity: 1 });
             $('.isya').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
+            if (clock === maghrib) modalMasukWaktu(display);
+            else if (clock === (isya - (10 * 60))) modalLaunch(10, "Isya");
+            else if (clock === (isya - (20 * 60))) modalLaunch(20, "Isya");
+            else if (clock === (isya - (30 * 60))) modalLaunch(30, "Isya");
         }
-        else if (clock >= isya && clock < (24 * 60)) {
+        else if (clock >= isya && clock < (24 * 3600)) {
             display = "Isya";
             $('.maghrib').css({ opacity: 0 });
             $('.isya').css({ opacity: 1 });
+            if (clock === isya) modalMasukWaktu(display);
         }
         else display = "null";
         $('.waktu').html(display);

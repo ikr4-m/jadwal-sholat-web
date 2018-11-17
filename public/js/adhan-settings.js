@@ -24,7 +24,7 @@ var _isya = formattedTime(prayerTimes.isha, +8.2, '24h');
 function parsePhaseAdzan(formattedTime) {
     var jam = formattedTime.substring(0, 2);
     var menit = formattedTime.substring(3);
-    return (jam * 60) + parseInt(menit);
+    return (jam * 3600) + (parseInt(menit) * 60);
 }
 var subuh = parsePhaseAdzan(_subuh);
 var terbit = parsePhaseAdzan(_terbit);
