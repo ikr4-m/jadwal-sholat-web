@@ -18,21 +18,45 @@ params.adjustments.isha = 3;
 var prayerTimes = new adhan.PrayerTimes(coordinates, date, params);
 var formattedTime = adhan.Date.formattedTime;
 
+// add imsyak
+function addImsyak(subuhFormattedTime) {
+    var _sliced = subuhFormattedTime.split('');
+    var sliced = _sliced.join('');
+    var hour = sliced.substring(0, 2);
+    var minute = sliced.substring(3);
+    var temp_new_minute = (Number.parseInt(minute) - 10).toString();
+
+    var hrs, min; if (Number.parseInt(temp_new_minute) < 0) {
+        min = (60 + Number.parseInt(temp_new_minute)).toString();
+        hrs = (Number.parseInt(hour) - 1).toString();
+    }
+    else {
+        min = temp_new_minute;
+        hrs = hour;
+    }
+
+    var new_hrs = hrs.length === 1 ? `0${hrs}` : hrs;
+    var new_min = min.length === 1 ? `0${min}` : min;
+
+    return new_hrs + ":" + new_min;
+}
+
 // common adzan time
 var _subuh = formattedTime(prayerTimes.fajr, +7.9, '24h');
+var _imsyak = addImsyak(_subuh);
 var _dhuha = formattedTime(prayerTimes.sunrise, +8, '24h');
 var _duhur = formattedTime(prayerTimes.dhuhr, +8, '24h');
 var _ashar = formattedTime(prayerTimes.asr, +7.9, '24h');
 var _maghrib = formattedTime(prayerTimes.maghrib, +8.1, '24h');
 var _isya = formattedTime(prayerTimes.isha, +8.2, '24h');
 
-// add imsyak
 // parse adzan
 function parsePhaseAdzan(formattedTime) {
     var jam = formattedTime.substring(0, 2);
     var menit = formattedTime.substring(3);
     return (jam * 3600) + (parseInt(menit) * 60);
 }
+var imsyak = parsePhaseAdzan(_imsyak);
 var subuh = parsePhaseAdzan(_subuh);
 var dhuha = parsePhaseAdzan(_dhuha);
 var duhur = parsePhaseAdzan(_duhur);
