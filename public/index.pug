@@ -1,0 +1,78 @@
+- var css = "./css";
+- var engine = "./engine";
+- var js = "./js";
+- var package = "./package";
+head
+    title Jadwal Sholat
+    link(rel="stylesheet", href=`${css}/main-style.css`)
+    // engine pendukung
+    script(src=`${engine}/jquery-3.3.1.min.js`)
+    script(src=`${engine}/adhan.js`)
+
+body
+    // adhan paramaters
+    script(src=`${js}/adhan-settings.js`)
+    // clocking system
+    script(src=`${js}/clocking.js`)
+    // marquee text
+    script(src=`${js}/marquee-property.js`)
+    // random hadist
+    script(src=`${js}/hadist-list.js`)
+    script(src=`${js}/rand-hadist.js`)
+    //css setting
+    script(src=`${js}/css-settings.js`)
+
+    // BEGIN POPUP //
+    .modal-bg
+        .modal-isi
+            span(class="remind-minute") -time-
+            |  menit menuju waktu
+            br
+            | Shalat 
+            span(class="remind-time") -jamsholat-
+    .modal-switch
+        span(class="modal-isi-switch")
+            | Saatnya memasuki waktu
+            br
+            | Shalat 
+            span(class="masuk-waktu")
+
+    // BEGIN TEMPLATE //
+    .header
+        .jam
+            span(class="waktu") Loading...
+        .tanggal
+            span(class="date")
+    .running-text
+        marquee(behavior="scroll", direction="right")
+            .imsyak-text Imsyak
+            .separator |
+            .subuh-text Subuh
+            .separator |
+            .dhuha-text Dhuha
+            .separator |
+            .duhur-text Duhur
+            .separator |
+            .ashar-text Ashar
+            .separator |
+            .maghrib-text Maghrib
+            .separator |
+            .isya-text Isya
+    .fulltime
+        .hour 00
+        .fulltime-titik :
+        .minute 00
+        .fulltime-titik :
+        .second 00
+    .background
+        // reserved for img
+    footer
+        .animate
+            img(src=`${package}/subuh.png`, alt="subuh", class="subuh")
+            img(src=`${package}/dhuha.png`, alt="dhuha", class="dhuha")
+            img(src=`${package}/duhur.png`, alt="duhur", class="duhur")
+            img(src=`${package}/ashar.png`, alt="ashar", class="ashar")
+            img(src=`${package}/maghrib.png`, alt="maghrib", class="maghrib")
+            img(src=`${package}/isya.png`, alt="isya", class="isya")
+        .footer
+            span(class="isi-footer") Random Hadist

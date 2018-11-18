@@ -1,7 +1,7 @@
-module.exports = (app, site, router, logger) => {
+module.exports = (app, site, logger) => {
     try {
         app.get('/', function (req, res) {
-            res.render(".." + site + 'index.html');
+            res.render(".." + site + 'index.pug');
         });
     } catch (error) {
         console.log(logger("ERROR") + `${error.message}\n${error}`);

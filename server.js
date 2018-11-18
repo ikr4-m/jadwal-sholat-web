@@ -43,14 +43,14 @@ setTimeout(() => {
     app.use(express.static(__dirname + site));
     app.set('views', __dirname + '/main');
 
-    app.engine('html', require('ejs').renderFile);
-    app.set('view engine', 'ejs');
+    app.engine('pug', require('pug').renderFile);
+    app.set('view engine', 'pug');
 
     // trycatch untuk router dan listener
     try {
         // daripada pake command.run, sama aja sih, kan panggil function doang
         // biar kece, beri sedikit "animasi"
-        require("." + router + "router")(app, site, router, logger);
+        require("." + router + "router")(app, site, logger);
         require("." + router + "listener")(app, logger);
     }
     catch (err) {
