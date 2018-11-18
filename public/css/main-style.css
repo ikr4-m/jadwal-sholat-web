@@ -141,7 +141,7 @@ body {
     display: block;
 }
 /* Urusan JS, tidak bisa diganggu gugat */
-.subuh, .terbit, .duhur, .ashar, .maghrib, .isya {
+.subuh, .dhuha, .duhur, .ashar, .maghrib, .isya {
     opacity: 0;
 }
 

@@ -79,25 +79,25 @@ $().ready(function () {
             else if (clock === (subuh - (20 * 60))) modalLaunch(20, "Subuh");
             else if (clock === (subuh - (30 * 60))) modalLaunch(30, "Subuh");
         }
-        else if (clock >= subuh && clock < terbit) {
+        else if (clock >= subuh && clock < dhuha) {
             display = "Subuh";
-            maximum = terbit - subuh;
-            hasil = terbit - clock;
+            maximum = dhuha - subuh;
+            hasil = dhuha - clock;
             $('.subuh').css({ opacity: 1 });
-            $('.terbit').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
+            $('.dhuha').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
             if (clock === subuh) modalMasukWaktu(display);
-            else if (clock === (terbit - (10 * 60))) modalLaunch(10, "Terbit");
-            else if (clock === (terbit - (20 * 60))) modalLaunch(20, "Terbit");
-            else if (clock === (terbit - (30 * 60))) modalLaunch(30, "Terbit");
+            else if (clock === (dhuha - (10 * 60))) modalLaunch(10, "Dhuha");
+            else if (clock === (dhuha - (20 * 60))) modalLaunch(20, "Dhuha");
+            else if (clock === (dhuha - (30 * 60))) modalLaunch(30, "Dhuha");
         }
-        else if (clock >= terbit && clock < duhur) {
-            display = "Terbit";
-            maximum = duhur - terbit;
+        else if (clock >= dhuha && clock < duhur) {
+            display = "dhuha";
+            maximum = duhur - dhuha;
             hasil = duhur - clock;
             $('.subuh').css({ opacity: 0 });
-            $('.terbit').css({ opacity: 1 });
+            $('.dhuha').css({ opacity: 1 });
             $('.duhur').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
-            if (clock === terbit) modalMasukWaktu(display);
+            if (clock === dhuha) modalMasukWaktu(display);
             else if (clock === (duhur - (10 * 60))) modalLaunch(10, "Duhur");
             else if (clock === (duhur - (20 * 60))) modalLaunch(20, "Duhur");
             else if (clock === (duhur - (30 * 60))) modalLaunch(30, "Duhur");
@@ -106,7 +106,7 @@ $().ready(function () {
             display = "Duhur";
             maximum = ashar - duhur;
             hasil = ashar - clock;
-            $('.terbit').css({ opacity: 0 });
+            $('.dhuha').css({ opacity: 0 });
             $('.duhur').css({ opacity: 1});
             $('.ashar').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
             if (clock === duhur) modalMasukWaktu(display);
