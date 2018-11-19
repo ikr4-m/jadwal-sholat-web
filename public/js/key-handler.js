@@ -1,5 +1,7 @@
+var minute = 10, second = 0, con;
+var countingDown = false;
+
 document.onkeypress = (evt) => {
-    var minute = 10, second = 0, con;
     var $sec = $('.countdown-second');
     var $min = $('.countdown-minute'); 
 
@@ -9,6 +11,7 @@ document.onkeypress = (evt) => {
     $().ready(() => {
         if (charStr.toLowerCase() === "s") {
             if ($('.penampung-tirai').css('display') === 'none') {
+                countingDown = true;
                 $('.penampung-tirai').css({ display: 'block' });
                 $('.tirai-kiri').animate({ left: '0%' }, 1000);
                 $('.tirai-kanan').animate({ right: '0%' }, 1000);
@@ -17,26 +20,32 @@ document.onkeypress = (evt) => {
                     var pad = (x) => x.toString().length === 1 ? `0${x.toString()}` : x.toString();
                     $min.html(pad(minute));
                     $sec.html(pad(second));
-                    con = setInterval(() => {
-                        if ($min.html() === "00" && $sec.html() === "00") {
-                            clearInterval(con);
-                            minute = 10;
-                            second = 0;
-                            return;
-                        }
-                        else {
-                            $min.html(pad(minute));
-                            $sec.html(pad(second));
-                            second--;
-                            if (second < 0) {
-                                minute -= 1;
-                                second = 59;
+
+                    if (!con) {
+                        con = setInterval(() => {
+                            if (countingDown === true) {
+                                if ($min.html() === "00" && $sec.html() === "00") {
+                                    clearInterval(con);
+                                    minute = 10;
+                                    second = 0;
+                                    return;
+                                }
+                                else {
+                                    $min.html(pad(minute));
+                                    $sec.html(pad(second));
+                                    second--;
+                                    if (second < 0) {
+                                        minute -= 1;
+                                        second = 59;
+                                    }
+                                }
                             }
-                        }
-                    }, 100);
+                        }, 100);
+                    }
                 });
             }
             else {
+                countingDown = false;
                 $('.tirai-kiri').animate({ left: '-50%' }, 1000);
                 $('.tirai-kanan').animate({ right: '-50%' }, 1000);
                 $('.penampung-tirai').animate({ opacity: 0 }, 1000, () => {
