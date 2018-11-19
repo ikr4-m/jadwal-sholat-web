@@ -1,0 +1,17 @@
+.footer {
+    height: 151px;
+    font-family: 'PT Sans Regular';
+    font-size: 15pt;
+    width: 100%;
+    clear: both;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #CCC;
+    background-color: white;
+    padding: 2.4rem 2rem 2.1rem 2rem;
+    border-radius: 20% 20% 0 0;
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

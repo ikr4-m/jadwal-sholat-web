@@ -1,0 +1,11 @@
+.animate, .animate img {
+    position: fixed;
+    width: 500px;
+    bottom: 145px;
+    left: calc(47% - 13rem - 19px);
+    display: block;
+}
+/* Urusan JS, tidak bisa diganggu gugat */
+.subuh, .dhuha, .duhur, .ashar, .maghrib, .isya {
+    opacity: 0;
+}

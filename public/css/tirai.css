@@ -1,0 +1,38 @@
+.penampung-tirai {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	overflow: auto;
+	display: none;
+	opacity: 0;
+}
+.tirai-kiri, .tirai-kanan {
+	width: 51%;
+	top: 0%;
+	height: inherit;
+	position: absolute;
+	background-color: black;
+	overflow: hidden;
+}
+.tirai-kiri{
+	left: -50%;
+}
+.tirai-kanan {
+	right: -50%;
+}
+.final-countdown {
+	position: absolute;
+	top: 14%;
+	left: 15%;
+	opacity: 0;
+	font-family: 'Bebas Neue Regular';
+	font-size: 500px;
+}
+.final-countdown div {
+	color: white;
+	float: left;
+	text-align: center;
+}
+.countdown-minute, .countdown-second {
+	width: 395px;
+}

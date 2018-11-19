@@ -1,3 +1,20 @@
+/* Bagian kepala */
+@import "./header.css";
+/* Running Text */
+@import "./running-text.css";
+/* Jam digital */
+@import "./jam-digital.css";
+/* Modal */
+@import "./modal.css";
+/* Tirai */
+@import "./tirai.css";
+/* Gambar masjid */
+@import "./gambar-masjid.css";
+/* Footer */
+@import "./footer.css";
+
+/* START MAIN COMPONENT */
+
 /* Inisialisasi font */
 @font-face {
 	font-family: 'Bebas Neue Regular';
@@ -17,149 +34,40 @@ body {
 	font-family: sans-serif;
 	background-color: #EEE;
 }
-
-/* Layering Time */
-.header 		{z-index: 1;}
-.background		{z-index: -1;}
-.running-text 	{z-index: -1;}
-.fulltime 		{z-index: 3;}
-.animate		{z-index: 3;}
-.footer			{z-index: 3;}
-.modal-bg		{z-index: 4;}
-.modal-switch	{z-index: 4;}
-
 /* Background */
 .background {
 	background-color: red;
 	width: 100%;
 }
 
-/* Bagian kepala */
+/* Layering Time */
 .header {
-	background-color: #ffffff;
-	height: 71px;
-	box-shadow: 5px 3px 25px;
-	font-size: 22pt;
-	overflow: hidden;
-	width: 100%;
+	z-index: 1;
 }
-.jam {
-	font-family: 'PT Sans Regular';
-	padding: 1rem 1rem 1rem 1rem;
-	float: left;
+.background	{
+	z-index: -1;
 }
-.tanggal {
-	font-family: 'PT Sans Regular';
-	padding: 1rem;
-	float: right;
-}
-
-/* Running Text */
 .running-text {
-	font-family: 'PT Sans Regular';
-	display: block;
-	font-size: 15pt;
-	position: relative;
-	background-color: #ffffff;
-	height: 45px;
+	z-index: -1;
 }
-.running-text div {
-	padding: 12px 1rem 1rem 1rem;
-	float: left;
-}
-
-/* Jam digital */
 .fulltime {
-	font-family: 'Bebas Neue Regular';
-	
-	top: 1rem;
-	left: calc(50% - 12rem - 7px);
-	background-color: white;
-	padding: 1rem;
-	border: 1px solid #CCC;
-	font-size: 7rem;
-	position: absolute;
-
-	box-shadow: 0px 1px 25px grey;
+	z-index: 2;
 }
-.fulltime div {
-	text-align: center;
-	float: left;
+.animate {
+	z-index: 2;
 }
-.hour, .minute, .second {
-	width: 100px;
-	display: block;
-	text-align: center;
-}
-
-/* Modal */
-.modal-bg, .modal-switch {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-	padding-top: 16px;
-	overflow: auto;
-	background-color: rgba(0,0,0,0.2);
-	display: none;
-}
-.modal-isi, .modal-isi-switch {
-    display: block;
-    text-align: center;
-    padding: 35px 0px 0px 0px;
-    font-size: 40px;
-    font-family: 'PT Sans Regular';
-    width: 500px;
-    height: 150px;
-    background-color: white;
-    position: relative;
-    /* margin-top: 17px; */
-    margin-left: calc(47% - 13rem - 25px);
-    box-shadow: 0px 5px 25px grey;
-    text-overflow: ellipsis;
-	opacity: 1;
-	overflow: hidden;
-	animation-name: animmodal;
-	animation-duration: 0.5s;
-}
-@keyframes animmodal {
-	from {
-		top: -300px;
-		opacity: 0;
-	}
-	to {
-		top: 0px;
-		opacity: 1;
-	}
-}
-
-/* Gambar masjid */
-.animate, .animate img {
-    position: fixed;
-    width: 500px;
-    bottom: 145px;
-    left: calc(47% - 13rem - 19px);
-    display: block;
-}
-/* Urusan JS, tidak bisa diganggu gugat */
-.subuh, .dhuha, .duhur, .ashar, .maghrib, .isya {
-    opacity: 0;
-}
-
-/* Hadist */
 .footer {
-    height: 151px;
-    font-family: 'PT Sans Regular';
-    font-size: 15pt;
-    width: 100%;
-    clear: both;
-    box-sizing: border-box;
-    position: fixed;
-    bottom: 0;
-    border-top: 1px solid #CCC;
-    background-color: white;
-    padding: 2.4rem 2rem 2.1rem 2rem;
-    border-radius: 20% 20% 0 0;
-	text-align: center;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	z-index: 3;
+}
+.modal-bg {
+	z-index: 4;
+}
+.modal-switch {
+	z-index: 4;
+}
+.penampung-tirai {
+	z-index: 5;
+}
+.final-countdown {
+	z-index: 6;
 }

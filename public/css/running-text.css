@@ -1,0 +1,12 @@
+.running-text {
+	font-family: 'PT Sans Regular';
+	display: block;
+	font-size: 15pt;
+	position: relative;
+	background-color: #ffffff;
+	height: 45px;
+}
+.running-text div {
+	padding: 12px 1rem 1rem 1rem;
+	float: left;
+}

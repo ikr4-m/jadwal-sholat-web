@@ -19,10 +19,21 @@ body
     // random hadist
     script(src=`${js}/hadist-list.js`)
     script(src=`${js}/rand-hadist.js`)
-    //css setting
+    // css setting
     script(src=`${js}/css-settings.js`)
+    // key handler
+    script(src=`${js}/key-handler.js`)
 
     // BEGIN POPUP //
+    .penampung-tirai
+        .final-countdown
+            .countdown-minute 00
+            |
+            .countdown-titik :
+            |
+            .countdown-second 00
+        .tirai-kiri
+        .tirai-kanan
     .modal-bg
         .modal-isi
             span(class="remind-minute") -time-
@@ -60,9 +71,13 @@ body
             .isya-text Isya
     .fulltime
         .hour 00
+        |
         .fulltime-titik :
+        |
         .minute 00
+        |
         .fulltime-titik :
+        |
         .second 00
     .background
         // reserved for img

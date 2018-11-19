@@ -1,0 +1,18 @@
+.header {
+	background-color: #ffffff;
+	height: 71px;
+	box-shadow: 5px 3px 25px;
+	font-size: 22pt;
+	overflow: hidden;
+	width: 100%;
+}
+.jam {
+	font-family: 'PT Sans Regular';
+	padding: 1rem 1rem 1rem 1rem;
+	float: left;
+}
+.tanggal {
+	font-family: 'PT Sans Regular';
+	padding: 1rem;
+	float: right;
+}

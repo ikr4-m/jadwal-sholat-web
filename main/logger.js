@@ -1,8 +1,4 @@
 const chalk = require('chalk');
-/**
- * @param {Number} x
- * @returns {String}
- */
 function pad(x) {
     return (x.toString().length === 2) ? x : `0${x}`;
 }
