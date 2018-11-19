@@ -1,9 +1,13 @@
-var minute = 10, second = 0, con;
+// panggil menit dan detik sesuai jadwal
+var defMin = 10; var defSec = 0;
+
+var pad = (x) => x.toString().length === 1 ? `0${x.toString()}` : x.toString();
+var minute = defMin, second = defSec, con;
 var countingDown = false;
 
 document.onkeypress = (evt) => {
     var $sec = $('.countdown-second');
-    var $min = $('.countdown-minute'); 
+    var $min = $('.countdown-minute');
 
     evt = evt || window.event;
     var charcode = evt.keyCode || evt.which;
@@ -17,7 +21,6 @@ document.onkeypress = (evt) => {
                 $('.tirai-kanan').animate({ right: '0%' }, 1000);
                 $('.penampung-tirai').animate({ opacity: 1 }, 1000, () => {
                     $('.final-countdown').animate({ opacity: 1 }, 500);
-                    var pad = (x) => x.toString().length === 1 ? `0${x.toString()}` : x.toString();
                     $min.html(pad(minute));
                     $sec.html(pad(second));
 
@@ -28,7 +31,8 @@ document.onkeypress = (evt) => {
                                     clearInterval(con);
                                     minute = 10;
                                     second = 0;
-                                    return;
+                                    $min.html(pad(minute));
+                                    $sec.html(pad(second));
                                 }
                                 else {
                                     $min.html(pad(minute));
@@ -46,6 +50,10 @@ document.onkeypress = (evt) => {
             }
             else {
                 countingDown = false;
+                minute = 10;
+                second = 0;
+                $min.html(pad(minute));
+                $sec.html(pad(second));
                 $('.tirai-kiri').animate({ left: '-50%' }, 1000);
                 $('.tirai-kanan').animate({ right: '-50%' }, 1000);
                 $('.penampung-tirai').animate({ opacity: 0 }, 1000, () => {

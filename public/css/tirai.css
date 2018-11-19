@@ -36,3 +36,13 @@
 .countdown-minute, .countdown-second {
 	width: 395px;
 }
+.final-cwd {
+    text-align: center;
+    color: red;
+    position: absolute;
+    font-family: 'Bebas Neue Regular';
+    font-size: 264px;
+    top: 10%;
+	left: 15%;
+	opacity: 0;
+}
