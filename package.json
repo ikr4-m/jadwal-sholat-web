@@ -4,7 +4,7 @@
   "description": "Jadwal Sholat",
   "main": "server.js",
   "scripts": {
-    "test": "node server"
+    "run": "node server"
   },
   "author": "github/skymunn",
   "license": "GNU AGPL v.3",

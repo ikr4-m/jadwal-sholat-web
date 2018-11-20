@@ -91,7 +91,7 @@ $().ready(function () {
             else if (clock === (dhuha - (30 * 60))) modalLaunch(30, "Dhuha");
         }
         else if (clock >= dhuha && clock < duhur) {
-            display = "dhuha";
+            display = "Dhuha";
             maximum = duhur - dhuha;
             hasil = duhur - clock;
             $('.subuh').css({ opacity: 0 });

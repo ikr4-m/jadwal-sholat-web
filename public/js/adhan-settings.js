@@ -20,10 +20,9 @@ var formattedTime = adhan.Date.formattedTime;
 
 // add imsyak
 function addImsyak(subuhFormattedTime) {
-    var _sliced = subuhFormattedTime.split('');
-    var sliced = _sliced.join('');
+    var sliced = subuhFormattedTime.match(/[0-9]/gm).join('');
     var hour = sliced.substring(0, 2);
-    var minute = sliced.substring(3);
+    var minute = sliced.substring(2);
     var temp_new_minute = (Number.parseInt(minute) - 10).toString();
 
     var hrs, min; if (Number.parseInt(temp_new_minute) < 0) {
