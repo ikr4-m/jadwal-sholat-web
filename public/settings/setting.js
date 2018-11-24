@@ -2,6 +2,7 @@ var settings = {
     "city_name": "Makassar",
     "longitude": "5.15",
     "latitude": "119.46666666667",
+    "hadist_duration": 1.5,
     "iqomah_duration": {
         "minute": 10,
         "second": 0

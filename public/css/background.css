@@ -1,0 +1,15 @@
+.background {
+	width: 100%;
+	background-color: gray;
+}
+.background img {
+	width: inherit;
+	height: inherit;
+	position: fixed;
+}
+.subuhbg, .dhuhabg, .duhurbg, .asharbg, .maghribbg, .isyabg {
+    opacity: 0;
+}
+.cloud {
+    opacity: 0.3;
+}

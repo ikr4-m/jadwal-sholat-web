@@ -1,5 +1,5 @@
 var hadist = hadist_list;
-var hadistIntegral = (1.5 * 60) * 1000;
+var hadistIntegral = (settings.hadist_duration * 60) * 1000;
 $().ready(() => {
     function reloadHadist(array) {
         return Math.floor(Math.random() * array.length);

@@ -12,6 +12,8 @@
 @import "./gambar-masjid.css";
 /* Footer */
 @import "./footer.css";
+/* Background */
+@import "./background.css";
 
 /* START MAIN COMPONENT */
 
@@ -33,17 +35,6 @@ body {
 	margin: 0;
 	font-family: sans-serif;
 	background-color: #EEE;
-}
-/* Background */
-.background {
-	width: 100%;
-}
-.background img {
-	width: inherit;
-	height: inherit;
-	position: fixed;
-	opacity: 0;
-	background-color: gray;
 }
 
 /* Layering Time */
