@@ -15,7 +15,7 @@ var settings = {
         "fajr": 20,
         "dhuha": 2,
         "dhuhr": 2,
-        "asr": 8,
+        "asr": 2,
         "maghrib": 10,
         "isha": 3
     }

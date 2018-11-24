@@ -96,6 +96,7 @@ $().ready(function () {
         if (clock < subuh) {
             display = "Tengah Malam";
             $('.subuh').css({ opacity: 1 });
+            $('.subuhbg').css({ opacity: 1 });
             if (clock === (subuh - (10 * 60))) modalLaunch(10, "Subuh");
             else if (clock === (subuh - (20 * 60))) modalLaunch(20, "Subuh");
             else if (clock === (subuh - (30 * 60))) modalLaunch(30, "Subuh");
@@ -106,6 +107,8 @@ $().ready(function () {
             hasil = dhuha - clock;
             $('.subuh').css({ opacity: 1 });
             $('.dhuha').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
+            $('.subuhbg').css({ opacity: 1 });
+            $('.dhuhabg').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
             if (clock === subuh) modalMasukWaktu(display);
             else if (clock === (dhuha - (10 * 60))) modalLaunch(10, "Dhuha");
             else if (clock === (dhuha - (20 * 60))) modalLaunch(20, "Dhuha");
@@ -118,6 +121,9 @@ $().ready(function () {
             $('.subuh').css({ opacity: 0 });
             $('.dhuha').css({ opacity: 1 });
             $('.duhur').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
+            $('.subuhbg').css({ opacity: 0 });
+            $('.dhuhabg').css({ opacity: 1 });
+            $('.duhurbg').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
             if (clock === dhuha) modalMasukWaktu(display);
             else if (clock === (duhur - (10 * 60))) modalLaunch(10, "Duhur");
             else if (clock === (duhur - (20 * 60))) modalLaunch(20, "Duhur");
@@ -130,6 +136,9 @@ $().ready(function () {
             $('.dhuha').css({ opacity: 0 });
             $('.duhur').css({ opacity: 1});
             $('.ashar').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
+            $('.dhuhabg').css({ opacity: 0 });
+            $('.duhurbg').css({ opacity: 1});
+            $('.asharbg').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
             if (clock === duhur) modalMasukWaktu(display);
             else if (clock === (ashar - (10 * 60))) modalLaunch(10, "Ashar");
             else if (clock === (ashar - (20 * 60))) modalLaunch(20, "Ashar");
@@ -142,6 +151,9 @@ $().ready(function () {
             $('.duhur').css({ opacity: 0 });
             $('.ashar').css({ opacity: 1 });
             $('.maghrib').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
+            $('.duhurbg').css({ opacity: 0 });
+            $('.asharbg').css({ opacity: 1 });
+            $('.maghribbg').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
             if (clock === ashar) modalMasukWaktu(display);
             else if (clock === (maghrib - (10 * 60))) modalLaunch(10, "Maghrib");
             else if (clock === (maghrib - (20 * 60))) modalLaunch(20, "Maghrib");
@@ -154,6 +166,9 @@ $().ready(function () {
             $('.ashar').css({ opacity: 0 });
             $('.maghrib').css({ opacity: 1 });
             $('.isya').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
+            $('.asharbg').css({ opacity: 0 });
+            $('.maghribbg').css({ opacity: 1 });
+            $('.isyabg').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
             if (clock === maghrib) modalMasukWaktu(display);
             else if (clock === (isya - (10 * 60))) modalLaunch(10, "Isya");
             else if (clock === (isya - (20 * 60))) modalLaunch(20, "Isya");
@@ -163,6 +178,8 @@ $().ready(function () {
             display = "Isya";
             $('.maghrib').css({ opacity: 0 });
             $('.isya').css({ opacity: 1 });
+            $('.maghribbg').css({ opacity: 0 });
+            $('.isyabg').css({ opacity: 1 });
             if (clock === isya) modalMasukWaktu(display);
         }
         else display = "null";

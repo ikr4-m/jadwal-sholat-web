@@ -4,8 +4,7 @@ var date = new Date();
 let coordinates = new adhan.Coordinates(5.15, 119.46666666667);
 
 var params = adhan.CalculationMethod.Other();
-if (settings.adhan_settings.madhab === 1) params.madhab = adhan.Madhab.Shafi;
-if (settings.adhan_settings.madhab === 2) params.madhab = adhan.Madhab.Hanafi;
+params.madhab = settings.adhan_settings.madhab === 1 ? adhan.Madhab.Shafi : adhan.Madhab.Hanafi;
 params.fajrAngle = settings.adhan_settings.fajrAngle;
 params.ishaAngle = settings.adhan_settings.ishaAngle;
 params.adjustments.fajr = settings.time_adjustments.fajr;

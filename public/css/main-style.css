@@ -36,8 +36,14 @@ body {
 }
 /* Background */
 .background {
-	background-color: red;
 	width: 100%;
+}
+.background img {
+	width: inherit;
+	height: inherit;
+	position: fixed;
+	opacity: 0;
+	background-color: gray;
 }
 
 /* Layering Time */
