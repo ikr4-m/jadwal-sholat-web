@@ -46,7 +46,7 @@ Sedikit penjelasan, **run_istaller.bat** berguna untuk menginstal dependensi/pak
 
 ## Cara Mengatur Aplikasi
 
-1. Navigasikan ke folder /public/setting/.
+1. Navigasikan ke folder /public/settings/.
 2. Di dalam folder itu ada dua file yakni.
    - hadist_list.js (Daftar hadist yang selalu berputar tiap saat)
    - setting.js (Beberapa pengaturan penting yang harus diatur demi kelangsungan aplikasi)
@@ -100,7 +100,7 @@ Angka | Mazhab | Keterangan
 
 Untuk bagian ini, hanya penambahan beberapa menit untuk tiap waktu. Apabila angkanya bernilai `+` maka menitnya maju ke depan, namun apabila angkanya bernilai `-` maka menitnya mundur ke belakang.
 
-### hadist-list (hadist-list: String[])
+### hadist-list (hadist_list: String[])
 
 Untuk bagian ini, kalian cukup menambahkan koma kemudian tambahkan string baru sesudah koma.
 Contoh Awal:
