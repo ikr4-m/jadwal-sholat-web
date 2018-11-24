@@ -1,5 +1,6 @@
 // panggil menit dan detik sesuai jadwal
-var defMin = 10; var defSec = 0;
+var defMin = settings.iqomah_duration.minute; 
+var defSec = settings.iqomah_duration.second;
 var countdownIntegral = 1000;
 
 // inisialisasi jam

@@ -1,19 +1,19 @@
 const adhan = require('adhan');
 
-// Settingan jelas terpampang dibawah, lebih lengkap liat di
-// https://github.com/batoulapps/adhan-js
 var date = new Date();
-//http://maps.google.com/maps?q=-5.15,+119.46666666667+(Makassar)&iwloc=A&hl=en&z=12&t=h
 let coordinates = new adhan.Coordinates(5.15, 119.46666666667);
+
 var params = adhan.CalculationMethod.Other();
-params.madhab = adhan.Madhab.Shafi;
-params.fajrAngle = 20;
-params.ishaAngle = 18;
-params.adjustments.fajr = -10;
-params.adjustments.dhuhr = 2;
-params.adjustments.asr = 8;
-params.adjustments.maghrib = 10;
-params.adjustments.isha = 3;
+if (settings.adhan_settings.madhab === 1) params.madhab = adhan.Madhab.Shafi;
+if (settings.adhan_settings.madhab === 2) params.madhab = adhan.Madhab.Hanafi;
+params.fajrAngle = settings.adhan_settings.fajrAngle;
+params.ishaAngle = settings.adhan_settings.ishaAngle;
+params.adjustments.fajr = settings.time_adjustments.fajr;
+params.adjustments.sunrise = settings.time_adjustments.dhuha;
+params.adjustments.dhuhr = settings.time_adjustments.dhuhr;
+params.adjustments.asr = settings.time_adjustments.asr;
+params.adjustments.maghrib = settings.time_adjustments.maghrib;
+params.adjustments.isha = settings.time_adjustments.isha;
 
 var prayerTimes = new adhan.PrayerTimes(coordinates, date, params);
 var formattedTime = adhan.Date.formattedTime;
@@ -25,7 +25,8 @@ function addImsyak(subuhFormattedTime) {
     var minute = sliced.substring(2);
     var temp_new_minute = (Number.parseInt(minute) - 10).toString();
 
-    var hrs, min; if (Number.parseInt(temp_new_minute) < 0) {
+    var hrs, min;
+    if (Number.parseInt(temp_new_minute) < 0) {
         min = (60 + Number.parseInt(temp_new_minute)).toString();
         hrs = (Number.parseInt(hour) - 1).toString();
     }
@@ -41,13 +42,13 @@ function addImsyak(subuhFormattedTime) {
 }
 
 // common adzan time
-var _subuh = formattedTime(prayerTimes.fajr, +7.9, '24h');
+var _subuh = formattedTime(prayerTimes.fajr, +8, '24h');
 var _imsyak = addImsyak(_subuh);
 var _dhuha = formattedTime(prayerTimes.sunrise, +8, '24h');
 var _duhur = formattedTime(prayerTimes.dhuhr, +8, '24h');
-var _ashar = formattedTime(prayerTimes.asr, +7.9, '24h');
-var _maghrib = formattedTime(prayerTimes.maghrib, +8.1, '24h');
-var _isya = formattedTime(prayerTimes.isha, +8.2, '24h');
+var _ashar = formattedTime(prayerTimes.asr, +8, '24h');
+var _maghrib = formattedTime(prayerTimes.maghrib, +8, '24h');
+var _isya = formattedTime(prayerTimes.isha, +8, '24h');
 
 // parse adzan
 function parsePhaseAdzan(formattedTime) {

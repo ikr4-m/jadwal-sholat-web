@@ -21,12 +21,12 @@
 	right: -50%;
 }
 .final-countdown {
-	position: absolute;
-	top: 14%;
-	left: 15%;
-	opacity: 0;
-	font-family: 'Bebas Neue Regular';
-	font-size: 500px;
+	position: fixed;
+    top: 8%;
+    left: calc(34% - 18rem - 17px);
+    opacity: 0;
+    font-family: 'Bebas Neue Regular';
+    font-size: 555px;
 }
 .final-countdown div {
 	color: white;
@@ -34,15 +34,15 @@
 	text-align: center;
 }
 .countdown-minute, .countdown-second {
-	width: 395px;
+	width: 455px;
 }
 .final-cwd {
     text-align: center;
     color: white;
-    position: absolute;
+    position: fixed;
     font-family: 'Bebas Neue Regular';
     font-size: 264px;
     top: 10%;
-	left: 15%;
+	left: calc(33% - 13rem - 19px);
 	opacity: 0;
 }

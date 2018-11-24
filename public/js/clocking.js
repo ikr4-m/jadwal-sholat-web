@@ -12,6 +12,25 @@ $().ready(function () {
         bulan = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus",
             "September", "Oktober", "November", "Desember");
     $('.date').html(`${hari[day]}, ${date} ${bulan[month]} ${year}`);
+    // animasikan kota dan tanggal di ujung kanan
+    setInterval(() => {
+        var dateRiteNow = `${hari[day]}, ${date} ${bulan[month]} ${year}`;
+        var city = settings.city_name;
+        var jDate = $('.date').html();
+        var $date = $('.date');
+        if (jDate === city) {
+            $date.animate({opacity: 0}, 500, () => {
+                $date.html(dateRiteNow);
+                $date.animate({opacity: 1});
+            })
+        }
+        else {
+            $date.animate({opacity: 0}, 500, () => {
+                $date.html(city);
+                $date.animate({opacity: 1});
+            })
+        }
+    }, 5000);
     //hour = 00; minute = 00; second = 00; // debugging purposes
 
     // realtime clocking system
@@ -43,6 +62,8 @@ $().ready(function () {
          * .<waktuSkrg> >> opacity: persentase/100
          * .<waktuSelanjutnya> >> opacity: ((100-persentase)/100)
          */
+        
+        // begin real clocking
         var display, hasil, maximum;
         function turnOpacity(hasil, maximum) {
             return (hasil / maximum) * 100;

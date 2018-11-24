@@ -2,6 +2,7 @@
 - var engine = "./engine";
 - var js = "./js";
 - var package = "./package";
+- var setting = "./settings";
 head
     title Jadwal Sholat
     link(rel="stylesheet", href=`${css}/main-style.css`)
@@ -10,6 +11,10 @@ head
     script(src=`${engine}/adhan.js`)
 
 body
+    // setting
+    script(src=`${setting}/setting.js`)
+    // hadist list
+    script(src=`${setting}/hadist-list.js`)
     // adhan paramaters
     script(src=`${js}/adhan-settings.js`)
     // clocking system
@@ -17,7 +22,6 @@ body
     // marquee text
     script(src=`${js}/marquee-property.js`)
     // random hadist
-    script(src=`${js}/hadist-list.js`)
     script(src=`${js}/rand-hadist.js`)
     // css setting
     script(src=`${js}/css-settings.js`)
