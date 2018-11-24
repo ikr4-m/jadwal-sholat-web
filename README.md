@@ -33,14 +33,20 @@ Dengan bahasa paling dominan yaitu JavaScript sebagai backend memungkinkan aplik
 
 ## Cara Install
 
-1. [Clone repository ini!](https://github.com/skymunn/jadwal-sholat-web/archive/master.zip)
-2. Ekstrak zip, kemudian jalankan **run_installer.bat** untuk penggunaan pertama kali.
-3. Untuk menjalankan aplikasinya, jalankan **run_only.bat**
+1. [Download NodeJS disini!](https://nodejs.org/en/)
+
+Catatan sedikit, **TOLONG JANGAN CENTANG INI (BOXSTARTER) KALAU PAKET DATA ANDA TAK INGIN DIKURAS SEKURAS-KURASNYA!**
+
+![Boxstarter Installer](https://images2.imgbox.com/73/55/16qmu0Dl_o.png)
+
+2. [Clone repository ini!](https://github.com/skymunn/jadwal-sholat-web/archive/master.zip)
+3. Ekstrak zip, kemudian jalankan **run_installer.bat** untuk penggunaan pertama kali.
+4. Untuk menjalankan aplikasinya, jalankan **run_only.bat**
 
 Sedikit penjelasan, **run_istaller.bat** berguna untuk menginstal dependensi/paket yang digunakan dalam aplikasi ini. Pastikan ketika anda menjalankan file tersebut anda terkoneksi dengan internet.
 
-4. Dan, biarkan konsol bekerja sendiri hingga aplikasi peramban (Chrome) terbuka sendiri
-5. Untuk keluar dari aplikasi, aktifkan konsol (Alt + Tab hingga mencapai cmd.exe) kemudian tekan Ctrl + C, kemudian tulis Y dan tekan Enter.
+5. Dan, biarkan konsol bekerja sendiri hingga aplikasi peramban (Chrome) terbuka sendiri
+6. Untuk keluar dari aplikasi, aktifkan konsol (Alt + Tab hingga mencapai cmd.exe) kemudian tekan Ctrl + C, kemudian tulis Y dan tekan Enter.
 
 *Catatan: Apabila anda tidak mempunyai Google Chrome, coba peramban yang lain dan buka http://localhost:3030/ dalam peramban anda.*
 
