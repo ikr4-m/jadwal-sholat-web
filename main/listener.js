@@ -1,11 +1,12 @@
 const port = require("./constant").listener_port;
+const logger = require("./logger")
 
-module.exports = (app, logger, plugin) => {
+module.exports = (app) => {
     try {
         app.listen(port, () => {
-            console.log(logger("Preparing") + "Port has opened!");
+            logger.info("Port has opened!");
         });
     } catch (error) {
-        console.log(logger("ERROR") + `${error.message}\n${error}`);
+        logger.error(`${error.message}\n${error}`);
     }
 };

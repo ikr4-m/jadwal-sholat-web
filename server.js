@@ -28,8 +28,8 @@ function kotaque(h1, h2) {
     return ret.join('');
 }
 console.log(`${kotaque(header1, header2)}\n${header1}\n${header2}\n${kotaque(header1, header2)}`);
-console.log(logger("INFO") + "Press ALT + TAB to switch to this console (if you didn't open any application)");
-console.log(logger("INFO") + "Press CTRL + C from this console to shutdown the server and app.\n");
+logger.info("Press ALT + TAB to switch to this console (if you didn't open any application)");
+logger.info("Press CTRL + C from this console to shutdown the server and app.\n");
 
 setTimeout(() => {
     // panggil express untuk jadi web server
@@ -50,19 +50,19 @@ setTimeout(() => {
     try {
         // daripada pake command.run, sama aja sih, kan panggil function doang
         // biar kece, beri sedikit "animasi"
-        require("." + router + "router")(app, site, logger);
-        require("." + router + "listener")(app, logger);
+        require("." + router + "router")(app, site);
+        require("." + router + "listener")(app);
     }
     catch (err) {
         // panggil error
-        console.log(logger("ERROR") + `${err.message}\n${err}`);
+        logger.error(`${err.message}\n${err}`);
     }
     finally {
         setTimeout(() => {
-            console.log(logger("Preparing") + "Calling chrome to open http://localhost:3030/ for you.");
+            logger.info("Calling chrome to open http://localhost:3030/ for you.")
         }, 1000);
         setTimeout(() => {
-            require("." + router + "call-chrome")(logger);
+            require("." + router + "call-chrome")();
         }, 2500);
     }
 }, 3000);
