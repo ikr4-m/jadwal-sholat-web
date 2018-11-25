@@ -26,7 +26,7 @@ Dengan bahasa paling dominan yaitu JavaScript sebagai backend memungkinkan aplik
 
 ## Fitur
 
-1. Jam adzan yang automatis dengan metode hizab bulan.
+1. Jam adzan yang automatis dengan metode hisab bulan.
 2. Sistem pengingat waktu shalat tiap 30-20-10 menit.
 3. Tombol **iqomah** yang biasanya ada dalam jam digital.
 4. Hadist yang telah diatur sedemikian rupa sehingga dapat berubah-ubah sesuai keinginan anda.
