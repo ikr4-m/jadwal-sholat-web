@@ -11,7 +11,6 @@ $().ready(function () {
         hari = new Array("Ahad", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"),
         bulan = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus",
             "September", "Oktober", "November", "Desember");
-    $('.date').html(`${hari[day]}, ${date} ${bulan[month]} ${year}`);
     // animasikan kota dan tanggal di ujung kanan
     setInterval(() => {
         var dateRiteNow = `${hari[day]}, ${date} ${bulan[month]} ${year}`;
@@ -19,15 +18,15 @@ $().ready(function () {
         var jDate = $('.date').html();
         var $date = $('.date');
         if (jDate === city) {
-            $date.animate({opacity: 0}, 500, () => {
+            $date.animate({ opacity: 0 }, 500, () => {
                 $date.html(dateRiteNow);
-                $date.animate({opacity: 1});
+                $date.animate({ opacity: 1 });
             })
         }
         else {
-            $date.animate({opacity: 0}, 500, () => {
+            $date.animate({ opacity: 0 }, 500, () => {
                 $date.html(city);
-                $date.animate({opacity: 1});
+                $date.animate({ opacity: 1 });
             })
         }
     }, 5000);
@@ -36,6 +35,8 @@ $().ready(function () {
     // realtime clocking system
     var integral = 1000;
     setInterval(() => {
+        $('.date').html(`${hari[day]}, ${date} ${bulan[month]} ${year}`);
+
         // Menganimasikan detik seperti pada umumnya
         second++;
         if (second === 60) { second = 0; minute++; }
@@ -62,7 +63,7 @@ $().ready(function () {
          * .<waktuSkrg> >> opacity: persentase/100
          * .<waktuSelanjutnya> >> opacity: ((100-persentase)/100)
          */
-        
+
         // begin real clocking
         var display, hasil, maximum;
         function turnOpacity(hasil, maximum) {
@@ -72,25 +73,25 @@ $().ready(function () {
             let interval = 500;
             $('.remind-minute').html(menit.toString());
             $('.remind-time').html(waktu.toString());
-            $('.modal-bg').css({display: 'block', opacity: 1});
+            $('.modal-bg').css({ display: 'block', opacity: 1 });
             setTimeout(() => {
-                $('.modal-isi').animate({top: '-300px'}, interval);
-                $('.modal-bg').animate({opacity: 0}, interval, () => {
-                    $('.modal-bg').css({display: 'none'});
-                    $('.modal-isi').css({top: '0px'});
-                });                
+                $('.modal-isi').animate({ top: '-300px' }, interval);
+                $('.modal-bg').animate({ opacity: 0 }, interval, () => {
+                    $('.modal-bg').css({ display: 'none' });
+                    $('.modal-isi').css({ top: '0px' });
+                });
             }, 5000);
         }
         function modalMasukWaktu(waktu) {
             let interval = 500;
             $('.masuk-waktu').html(waktu.toString());
-            $('.modal-switch').css({display: 'block', opacity: 1});
+            $('.modal-switch').css({ display: 'block', opacity: 1 });
             setTimeout(() => {
-                $('.modal-isi-switch').animate({top: '-300px'}, interval);
-                $('.modal-switch').animate({opacity: 0}, interval, () => {
-                    $('.modal-switch').css({display: 'none'});
-                    $('.modal-isi-switch').css({top: '0px'});
-                });                
+                $('.modal-isi-switch').animate({ top: '-300px' }, interval);
+                $('.modal-switch').animate({ opacity: 0 }, interval, () => {
+                    $('.modal-switch').css({ display: 'none' });
+                    $('.modal-isi-switch').css({ top: '0px' });
+                });
             }, 5000);
         }
         if (clock < subuh) {
@@ -134,10 +135,10 @@ $().ready(function () {
             maximum = ashar - duhur;
             hasil = ashar - clock;
             $('.dhuha').css({ opacity: 0 });
-            $('.duhur').css({ opacity: 1});
+            $('.duhur').css({ opacity: 1 });
             $('.ashar').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
             $('.dhuhabg').css({ opacity: 0 });
-            $('.duhurbg').css({ opacity: 1});
+            $('.duhurbg').css({ opacity: 1 });
             $('.asharbg').css({ opacity: ((100 - turnOpacity(hasil, maximum)) / 100) });
             if (clock === duhur) modalMasukWaktu(display);
             else if (clock === (ashar - (10 * 60))) modalLaunch(10, "Ashar");
