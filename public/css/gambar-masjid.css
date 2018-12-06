@@ -1,8 +1,9 @@
 .animate, .animate img {
     position: fixed;
-    width: 500px;
+    width: calc(525px - 1px);
+    height: calc(50%);
     bottom: 145px;
-    left: calc(47% - 13rem - 19px);
+    left: calc(47% - 14rem - 6px);
     display: block;
 }
 /* Urusan JS, tidak bisa diganggu gugat */

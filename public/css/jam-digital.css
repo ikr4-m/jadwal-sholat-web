@@ -1,14 +1,14 @@
 .fulltime {
 	font-family: 'Bebas Neue Regular';
 	
-	top: 1rem;
-	left: calc(50% - 12rem - 7px);
+	top: 1.3rem;
+	left: calc(50% - 12rem - 3px);
 	background-color: white;
 	padding: 1rem;
 	border: 1px solid #CCC;
 	font-size: 7rem;
 	position: absolute;
-
+	border-radius: 20px;
 	box-shadow: 0px 1px 25px grey;
 }
 .fulltime div {
