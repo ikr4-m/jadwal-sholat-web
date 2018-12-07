@@ -1,16 +1,17 @@
+// inisialisasi perangkat tanggal
+var d = new Date(),
+    hour = d.getHours(),
+    minute = d.getMinutes(),
+    second = d.getSeconds(),
+    day = d.getDay(),
+    date = d.getDate(),
+    month = d.getMonth(),
+    year = d.getFullYear(),
+    hari = new Array("Ahad", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"),
+    bulan = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus",
+        "September", "Oktober", "November", "Desember");
 $().ready(function () {
-    // inisialisasi perangkat tanggal
-    var d = new Date(),
-        hour = d.getHours(),
-        minute = d.getMinutes(),
-        second = d.getSeconds(),
-        day = d.getDay(),
-        date = d.getDate(),
-        month = d.getMonth(),
-        year = d.getFullYear(),
-        hari = new Array("Ahad", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"),
-        bulan = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus",
-            "September", "Oktober", "November", "Desember");
+    $('.date').html(`${hari[day]}, ${date} ${bulan[month]} ${year}`);
     // animasikan kota dan tanggal di ujung kanan
     setInterval(() => {
         var dateRiteNow = `${hari[day]}, ${date} ${bulan[month]} ${year}`;
@@ -20,13 +21,13 @@ $().ready(function () {
         if (jDate === city) {
             $date.animate({ opacity: 0 }, 500, () => {
                 $date.html(dateRiteNow);
-                $date.animate({ opacity: 1 });
+                $date.animate({ opacity: 1 }, 500);
             })
         }
-        else {
+        else if (jDate === dateRiteNow){
             $date.animate({ opacity: 0 }, 500, () => {
                 $date.html(city);
-                $date.animate({ opacity: 1 });
+                $date.animate({ opacity: 1 }, 500);
             })
         }
     }, 5000);
@@ -35,8 +36,6 @@ $().ready(function () {
     // realtime clocking system
     var integral = 1000;
     setInterval(() => {
-        $('.date').html(`${hari[day]}, ${date} ${bulan[month]} ${year}`);
-
         // Menganimasikan detik seperti pada umumnya
         second++;
         if (second === 60) { second = 0; minute++; }
@@ -131,7 +130,7 @@ $().ready(function () {
             else if (clock === (duhur - (30 * 60))) modalLaunch(30, "Duhur");
         }
         else if (clock >= duhur && clock < ashar) {
-            display = "Duhur";
+            display = hari[day] === "Jum'at" ? "Jum'at" : "Dzuhur";
             maximum = ashar - duhur;
             hasil = ashar - clock;
             $('.dhuha').css({ opacity: 0 });
