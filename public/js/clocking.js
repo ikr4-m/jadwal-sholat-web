@@ -24,7 +24,7 @@ $().ready(function () {
                 $date.animate({ opacity: 1 }, 500);
             })
         }
-        else if (jDate === dateRiteNow){
+        else if (jDate === dateRiteNow) {
             $date.animate({ opacity: 0 }, 500, () => {
                 $date.html(city);
                 $date.animate({ opacity: 1 }, 500);
@@ -40,7 +40,11 @@ $().ready(function () {
         second++;
         if (second === 60) { second = 0; minute++; }
         if (minute === 60) { minute = 0; hour++; }
-        if (hour === 24) { hour = 0; minute = 0; second = 0; location.reload(); }
+        if (hour === 24) {
+            hour = 0; minute = 0; second = 0; setTimeout(() => {
+                location.reload();
+            }, 500);
+        }
         // 2 >> 02 || 10 >> 10
         function pad(angka) {
             return (angka.toString().length === 1) ? "0" + angka : angka;
